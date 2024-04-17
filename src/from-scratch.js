@@ -1,28 +1,68 @@
-const myForEach = () => {
+const myForEach = (arr, callback) => {
+  for (const index in arr){
+    callback(arr[index])
+  }
 };
 
-const myMap = () => {
+const myMap = (arr, callback) => { 
+  newArr = []
+  // for (const index in arr){
+  //   newArr.push(callback(arr[index]))
+  // }
+  for(const num of arr)  {
+    newArr.push(callback(num))
+  }
+  return newArr
 };
 
-const myFind = () => {
+const myFind = (arr, callback) => {
+  for (const element of arr){
+   if(callback(element)) {
+    return element
+   } 
+   }
+  }
+
+
+const myFilter = (arr, callback) => {
+  newArr = []
+  for(const element of arr) {
+    if(callback(element)) {
+      newArr.push(element)
+    }
+  }return newArr
 };
 
-const myFilter = () => {
+const sortWords = (arr) => {
+  newArr = [...arr]
+ return newArr.sort()
+    }
+  
+
+const sortNumbers = (arr) => {
+  newArr = [...arr]
+  return newArr.sort((a, b) => a - b)
 };
 
-const sortWords = () => {
+const sortNumbersBetter = (arr,isDescending) => {
+  newArr = [...arr]
+  if(isDescending) {return newArr.sort((a, b) => b - a)}
+   return newArr.sort((a, b) => a - b)
+  }
+
+//Create a new array to sort the users in ascending order.
+
+const sortUsersByOrder = (arr) => {
+  newArr = [...arr]
+  return newArr.sort((a, b) => a.order - b.order)
+ 
 };
 
-const sortNumbers = () => {
-};
 
-const sortNumbersBetter = () => {
-};
-
-const sortUsersByOrder = () => {
-};
-
-const sortUsersByName = () => {
+const sortUsersByName = (arr) => {
+  newArr = [...arr]
+  return newArr.sort((a, b) => a.name - b.name)
+ 
 };
 
 module.exports = {
