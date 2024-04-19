@@ -1,3 +1,4 @@
+/** FEEDBACK: Great job getting all test cases to pass!  */
 const myForEach = (arr, callback) => {
   for (const index in arr){
     callback(arr[index])
@@ -62,6 +63,7 @@ const sortUsersByOrder = (arr) => {
 const sortUsersByName = (arr) => {
   let newArr = [...arr]
   return newArr.sort((a, b) => {
+    /** FEEDBACK: Love this! */
     const nameA = a.name.toUpperCase(); // ignore upper and lowercase
     const nameB = b.name.toUpperCase(); // ignore upper and lowercase
     if (nameA < nameB) {
